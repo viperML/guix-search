@@ -1,0 +1,10 @@
+[project]
+name = "guix-search"
+version = "0.1.0"
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+guix-search = "guix_search:main"

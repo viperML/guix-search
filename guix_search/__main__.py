@@ -36,13 +36,17 @@ def main():
 
     for elem in res:
         if args.symbol:
-            print(f"{fg.blue}{elem['signature']}{fg.default}")
+            if elem['signature']:
+                print(f"{fg.blue}{elem['signature']}{fg.default}")
+            else:
+                print(f"{fg.blue}{elem['name']}{fg.default}")
             print(f"  Module: {fg.brightblack}({elem['module']}){fg.default}", end="")
             if elem["channel"] != "guix":
                 print(f"@ {elem['channel']}", end="")
             print()
             doc = indent(elem['doc'], 4*" ")
-            print(f"  Description:\n{fg.brightblack}{doc}{fg.default}")
+            if doc:
+                print(f"  Description:\n{fg.brightblack}{doc}{fg.default}")
             print()
 
         else:

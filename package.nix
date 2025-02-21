@@ -16,4 +16,5 @@ buildPythonPackage {
     httpx
     ansi
   ];
+  meta.mainProgram = "guix-search";
 }
